@@ -23,9 +23,10 @@ needed to finish it.
 | `diabetes.csv` | Local dataset used by the notebook and `main.py`. |
 | `DiabetesPredictionModel.ipynb` | Main exploration/preprocessing notebook; ends with a train/test split and an incomplete model-training cell. |
 | `main.py` | Loads and prints the CSV, then opens it in D-Tale for interactive exploration. It is not a prediction application. |
+| `requirement.txt` | Python packages used to run the notebook and exploratory script. |
 
-There is currently no dependency manifest, saved model, test suite, or
-prediction/API script in the project.
+There is currently no saved model, test suite, or prediction/API script in the
+project.
 
 ## Dataset
 
@@ -181,20 +182,19 @@ flowchart TD
 
 ## Running the project locally
 
-The project has no `requirements.txt` or `pyproject.toml` yet. From
-PowerShell, in the project directory, create and activate a virtual environment
-and install the packages used by the current files:
+From PowerShell, in the project directory, create and activate a virtual
+environment, then install the packages listed in `requirement.txt`:
 
 ```powershell
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
-python -m pip install pandas numpy matplotlib seaborn scikit-learn dtale jupyter
+python -m pip install -r requirement.txt
 ```
 
 If PowerShell blocks activation, use the Python executable directly instead:
 
 ```powershell
-.\.venv\Scripts\python.exe -m pip install pandas numpy matplotlib seaborn scikit-learn dtale jupyter
+.\.venv\Scripts\python.exe -m pip install -r requirement.txt
 ```
 
 Open the main notebook from the project directory:
